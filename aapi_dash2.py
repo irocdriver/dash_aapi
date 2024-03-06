@@ -507,16 +507,5 @@ def update_graph_pi_standing_chart(ethnic_select):
 if __name__ == '__main__':
     app.run(debug = True)
 
-if os.path.exists('aapi_dash.html'):
-    os.remove('aapi_dash.html')
-    print('aapi_dash.html was updated')
-    
-else:
-    print('aapi_dash.html was not in already in the directory, new file will be created now')
 
-with open('aapi_dash.html', 'a') as f:
-    f.write('<h1>Student Enrollment and Retention by Ethnic Sub-populations - Asian and Pacific Islander Detail</h1><h3><i>Analyzed by: Institutional Research</i></h3>')
-    f.write('<h3>Enrollment By Ethnicity and Term - Undergraduate (Fall Terms) </h3>')
-    #f.write(enrollment_by_ethnicity_term_line.to_html(full_html = False, include_plotlyjs = 'cdn'))
-    f.close()
 
