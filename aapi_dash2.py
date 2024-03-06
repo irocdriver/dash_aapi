@@ -150,11 +150,11 @@ app = Dash(__name__)
 
 app.layout = html.Div([
     html.Div(children = 'Student Enrollment by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= asian_group_counts_columns[0], value = 'Filipino',  id = 'controls-and-drop', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= asian_group_counts_ug_frame['asian_group'].unique(), value = 'Filipino',  id = 'controls-and-drop', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph'), 
     
     html.Div(children = 'Student Enrollment by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= pacific_islander_group_counts_columns[0], value = 'Other Pac.Islander',  id = 'controls-and-drop_pi', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= pacific_islander_group_counts_ug_frame['pacific_islander_group'].unique(), value = 'Other Pac.Islander',  id = 'controls-and-drop_pi', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_pi'),
 
     html.Div(children = 'Student Enrollment by Ethnic Sub-groups: Asian Groups'),
@@ -167,90 +167,90 @@ app.layout = html.Div([
 
     #ftf asian
     html.Div(children = 'FTF 1-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= ftf_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian'),
 
     html.Div(children = 'FTF 2-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= ftf_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_2', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_2', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_2'),
 
     html.Div(children = 'FTF 4-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= ftf_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_4', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_4', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_4'),
 
     html.Div(children = 'FTF 6-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= ftf_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_6', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_6', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_6'),
 
     #pacific ialander ftf
     html.Div(children = 'FTF 1-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= ftf_pacific_islander_frame_columns[0], value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi'),
 
     html.Div(children = 'FTF 2-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= ftf_pacific_islander_frame_columns[0], value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_2', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_2', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_2'),
 
     html.Div(children = 'FTF 4-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= ftf_pacific_islander_frame_columns[0], value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_4', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_4', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_4'),
 
     html.Div(children = 'FTF 6-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= ftf_pacific_islander_frame_columns[0], value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_6', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_6', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_6'),
 
     #transfer asian
     html.Div(children = 'Transfer 1-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= transfer_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_trf'),
 
     html.Div(children = 'Transfer 2-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= transfer_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_2', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_2', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_trf_2'),
 
     html.Div(children = 'Transfer 4-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= transfer_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_4', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_4', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_trf_4'),
 
     html.Div(children = 'Transfer 6-Year Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= transfer_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_6', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_6', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_trf_6'),
 
 #transfer pacific islander
     html.Div(children = 'Transfer 1-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= transfer_pacific_islander_frame_columns[0], value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_trf'),
 
     html.Div(children = 'Transfer 2-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= transfer_pacific_islander_frame_columns[0], value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf_2', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf_2', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_trf_2'),
 
     html.Div(children = 'Transfer 4-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= transfer_pacific_islander_frame_columns[0], value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf_4', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf_4', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_trf_4'),
 
     html.Div(children = 'Transfer 6-Year Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= transfer_pacific_islander_frame_columns[0], value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf_6', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_trf_6', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_trf_6'),
 
 #ftf retention asian chart
     html.Div(children = 'FTF Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= ftf_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_ftf_chart', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_ftf_chart', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_ftf_chart'),
 
 #ftf retention pacific islander chart
     html.Div(children = 'FTF Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= ftf_pacific_islander_frame_columns[0], value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_ftf_chart', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= ftf_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander',  id = 'controls-and-drop_rtn_pi_ftf_chart', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_ftf_chart'),
 
 #transfer retention asian chart
     html.Div(children = 'Transfer Student Retention by Ethnic Sub-groups: Asian Groups'),
-    dcc.Dropdown(options= transfer_asian_frame_columns[0], value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_chart', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_asian_frame['Asian Group'].unique(), value = 'Filipino',  id = 'controls-and-drop_rtn_asian_trf_chart', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_asian_trf_chart'),
 
 #transfer retention pacific islander chart
     html.Div(children = 'Transfer Student Retention by Ethnic Sub-groups: Pacific Islander Groups'),
-    dcc.Dropdown(options= transfer_pacific_islander_frame_columns[0], value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_trf_chart', placeholder = 'Select group from list below' ),
+    dcc.Dropdown(options= transfer_pacific_islander_frame['Pacific Islander Group'].unique(), value = 'Other Pac.Islander', id = 'controls-and-drop_rtn_pi_trf_chart', placeholder = 'Select group from list below' ),
     dcc.Graph(figure = {}, id = 'controls-and-graph_rtn_pi_trf_chart'),
 
 #asian standing chart
@@ -505,7 +505,7 @@ def update_graph_pi_standing_chart(ethnic_select):
 
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 5050, debug = True)
+    app.run(debug = True)
 
 
 
